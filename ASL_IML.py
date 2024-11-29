@@ -11,8 +11,11 @@ def load_data(base_dir, img_size=(64, 64)):
     labels = []
     
 
-    folders = sorted(os.listdir(base_dir), 
-                    key=lambda x: (len(x), x))  
+
+    folders = sorted(os.listdir(dataset_path), key=lambda x: (len(x), x))
+    label_mapping = {idx: folder for idx, folder in enumerate(folders)}
+    with open('label_mapping.json', 'w') as f:
+        json.dump(label_mapping, f)
     
     # label mapping dictionary
     label_mapping = {folder: idx for idx, folder in enumerate(folders)}
