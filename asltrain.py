@@ -252,7 +252,7 @@ def train_model(features, labels):
     history = model.fit(
         X_train, y_train,
         validation_data=(X_val, y_val),
-        epochs=30,
+        epochs=40,
         batch_size=32,
         callbacks=callbacks_list,
         verbose=1
