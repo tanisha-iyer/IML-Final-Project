@@ -29,7 +29,7 @@ hands_complex = mp_hands.Hands(
 
 # Global Constants
 DATASET_PATH = "/Users/user/Desktop/asl_dataset"
-LANDMARKS_SIZE = 63
+LANDMARKS_SIZE = 63 # 21 * 3 = 63
 
 def preprocess_image(image):
     """Enhanced image preprocessing pipeline."""
@@ -165,10 +165,10 @@ def process_dataset():
         success_rate = (folder_successful/folder_total)*100
         print(f"Class {folder}: {folder_successful}/{folder_total} processed ({success_rate:.1f}%)")
     
-    print(f"\nTotal Summary:")
+    print(f"\nData Sumaary:")
     print(f"Total images: {total_images}")
     print(f"Successfully processed: {total_processed}")
-    print(f"Overall success rate: {(total_processed/total_images)*100:.2f}%")
+    print(f"Success rate: {(total_processed/total_images)*100:.2f}%")
     
     # Save label mapping
     with open('label_mapping.json', 'w') as f:
@@ -252,7 +252,7 @@ def train_model(features, labels):
     history = model.fit(
         X_train, y_train,
         validation_data=(X_val, y_val),
-        epochs=100,
+        epochs=30,
         batch_size=32,
         callbacks=callbacks_list,
         verbose=1
