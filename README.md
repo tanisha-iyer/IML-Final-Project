@@ -8,3 +8,4 @@ We have approached this problem using a feedforward or fully connected neural ne
 Goal:
 The goal of this project is to develop a feedforward or fully connected neural network model that converts American Sign Language portrayed from real-time images into text. This model aims for a 75 to 80% accuracy level in recognising alphabets and letters, and a 95 to 100% success rate in processing all the input image data.
 
+Dataset Link - https://www.kaggle.com/datasets/ayuraj/asl-dataset
